@@ -19,9 +19,14 @@ Then we can use this provider and the transport created with viem to create the 
 ```ts
 import { createWalletClient } from "viem";
 import { mainnet } from "viem/chains";
+import { defiOracleMetaMainnet } from "./chains";
 
 const client = createWalletClient({
-  chain: mainnet,
+  chain: mainnet, // or defiOracleMetaMainnet for Chain ID 138
   transport: transport,
 });
 ```
+
+## DeFi Oracle Meta Mainnet (Chain ID 138)
+
+This example includes `src/chains.ts` with a `defineChain` configuration for **DeFi Oracle Meta Mainnet** (EVM chain ID 138, RPC `https://rpc.d-bis.org`, Blockscout explorer). Set `demoChain` in `App.tsx` to `defiOracleMetaMainnet` to exercise Chain 138 with the iframe provider.
